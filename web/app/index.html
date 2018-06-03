@@ -1,0 +1,73 @@
+<html>
+<!-- 
+  - Author(s): k3160
+  - Date: 2018-01-09 08:23:48
+  - Description:
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" contentType="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no">
+  <link rel="stylesheet" href="app/assets/css/vux.min.css">
+  <link rel="stylesheet" href="app/assets/css/mint-style.css">
+  <link rel="stylesheet" href="app/assets/css/threesion.css">
+  <title>标准工作流</title>
+</head>
+
+<body>
+
+  <div id="app" v-cloak>
+		<mt-tabbar v-model="selectedTab" v-show="tabbarVisible" fixed class="tabs">
+	      <mt-tab-item v-for="tab in tabs" :key="tab.id" :id="tab.id" v-if="tab.isEnabled">
+	        {{tab.name}}
+	      </mt-tab-item>
+    </mt-tabbar>
+    <keep-alive :include="/MyPage/">
+      <router-view id="page-view"></router-view>
+    </keep-alive>
+  </div>
+
+  <script src="app/assets/js/jquery.min.js"></script>
+  <script src="app/assets/js/jquery.easyui.min.js"></script>
+  <script src="app/assets/js/axios.min.js"></script>
+  <script src="app/assets/js/fastclick.js"></script>
+  <script src="app/assets/js/moment.min.js"></script>
+  <script src="app/assets/js/vue.js"></script>
+  <script src="app/assets/js/vue-router.js"></script>
+  <script src="app/assets/js/vux.min.js"></script>
+  <script src="app/assets/js/mint-index.js"></script>
+
+  <script src="app/DataSourceFake.js"></script>
+  <script src="app/uireg.js"></script>
+
+  <script src="app/Models/Todo.js"></script>
+  <script src="app/Models/DateUtil.js"></script>
+  <script src="app/Models/Attachment.js"></script>
+
+  <script src="app/Views/Components/DatePicker.js"></script>
+  <script src="app/Views/Components/AttachmentLink.js"></script>
+
+  <script src="app/Views/Util/VueBus.js"></script>
+
+  <script src="app/Views/Pages/MyPage.js"></script>
+  <script src="app/Views/Pages/TeamPage.js"></script>
+  <script src="app/Views/Pages/OtherPage.js"></script>
+  <script src="app/Views/Pages/TemplatesPage.js"></script>
+  <script src="app/Views/Pages/TemplatesSearchPage.js"></script>
+  <script src="app/Views/Pages/FormsPage.js"></script>
+  <script src="app/Views/Pages/TodoPage.js"></script>
+  <script src="app/Views/Pages/TodoAddPage.js"></script>
+
+  <script src="app/route.js"></script>
+  <script src="app/app.js"></script>
+
+  <script src="https://do.yunzhijia.com/pub/js/qingjs.js"></script>
+  <script>
+    // $(function () {
+    //   FastClick.attach(document.body);
+    // });
+  </script>
+</body>
+
+</html>
